@@ -1,6 +1,6 @@
 job {
     name 'Puppet code quality'
-    label 'puppet'
+    label 'docker'
     scm {
         git('https://github.com/Hylke1982/TDDTrainingApplication', 'devops-experience-workshop')
     }
