@@ -6,4 +6,7 @@ job {
     steps {
         maven('-f TDDTrainingApplicationCC/pom.xml compile')
     }
+    publishers {
+        downstream('Second build job (unit test)')
+    }
 }
