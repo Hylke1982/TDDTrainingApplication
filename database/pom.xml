@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>nl.codecentric.training.tdd</groupId>
+        <artifactId>TDDTrainingApplication</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <groupId>nl.codecentric.training.tdd</groupId>
+    <artifactId>database</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>TDDTrainingApplication database</name>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liquibase.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Default properties -->
+    <properties>
+        <database.properties>${basedir}/src/main/resources/hsqldb.mem.properties</database.properties>
+        <db.dependency.artifactId>hsqldb</db.dependency.artifactId>
+        <db.dependency.groupId>org.hsqldb</db.dependency.groupId>
+        <db.dependency.version>${hsqldb.version}</db.dependency.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <configuration>
+                    <propertyFile>${database.properties}</propertyFile>
+                    <changeLogFile>${basedir}/src/main/resources/changelogs/master-changelog.xml</changeLogFile>
+                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>${db.dependency.groupId}</groupId>
+                        <artifactId>${db.dependency.artifactId}</artifactId>
+                        <version>${db.dependency.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
