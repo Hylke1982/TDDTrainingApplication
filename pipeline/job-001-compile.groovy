@@ -9,5 +9,6 @@ job {
     publishers {
         downstream('Second build job (unit test)')
         downstream('Database script creation')
+        downstream('Puppet code quality')
     }
 }
