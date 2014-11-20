@@ -1,5 +1,5 @@
 job {
-    name 'First build job (Compile)'
+    name 'First build job (compilation)'
     scm {
         git('https://github.com/Hylke1982/TDDTrainingApplication', 'devops-experience-workshop')
     }
