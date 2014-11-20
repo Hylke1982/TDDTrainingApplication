@@ -1,26 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>nl.codecentric.training.tdd</groupId>
+        <artifactId>TDDTrainingApplication</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
     <groupId>nl.codecentric.training.tdd</groupId>
     <artifactId>TDDTrainingApplicationCC</artifactId>
     <packaging>war</packaging>
     <version>1.0.0-SNAPSHOT</version>
-    <name>TDDTrainingApplicationCC Maven Webapp</name>
+    <name>TDDTrainingApplication training Web Application</name>
     <url>http://www.codecentric.nl</url>
 
-    <properties>
-        <!-- The following development phases could be chosen (development,integration,acceptance,production) -->
-        <developmentPhase>development</developmentPhase>
-        <functionalEnabled>true</functionalEnabled>
-        <spring.version>3.0.7.RELEASE</spring.version>
-        <jetty.version>7.6.4.v20120524</jetty.version>
-        <thucydides.version>0.9.233</thucydides.version>
-        <thucydides.port>38080</thucydides.port>
-        <thucydides.only.save.failing.screenshots>true</thucydides.only.save.failing.screenshots>
-        <webdriver.base.url>http://localhost:${thucydides.port}/account</webdriver.base.url>
-        <webdriver.driver>firefox</webdriver.driver>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+
 
     <dependencies>
 
@@ -135,16 +130,6 @@
     <build>
         <finalName>TDDTrainingApplicationCC</finalName>
         <plugins>
-           <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
-            </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.14</version>
