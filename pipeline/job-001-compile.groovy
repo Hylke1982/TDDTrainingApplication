@@ -1,6 +1,6 @@
 job {
     name 'First build job'
-    sc {
+    scm {
         git('https://github.com/Hylke1982/TDDTrainingApplication', 'devops-experience-workshop')
     }
     steps {
