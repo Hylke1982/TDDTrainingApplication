@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>nl.codecentric.training.tdd</groupId>
+    <artifactId>TDDTrainingApplication</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>TDDTrainingApplication</name>
+    <url>http://www.codecentric.nl</url>
+
+    <modules>
+        <module>database</module>
+        <module>TDDTrainingApplicationCC</module>
+    </modules>
+
+    <properties>
+        <!-- The following development phases could be chosen (development,integration,acceptance,production) -->
+        <developmentPhase>development</developmentPhase>
+        <functionalEnabled>true</functionalEnabled>
+        <spring.version>3.0.7.RELEASE</spring.version>
+        <jetty.version>7.6.4.v20120524</jetty.version>
+        <thucydides.version>0.9.233</thucydides.version>
+        <thucydides.port>38080</thucydides.port>
+        <thucydides.only.save.failing.screenshots>true</thucydides.only.save.failing.screenshots>
+        <webdriver.base.url>http://localhost:${thucydides.port}/account</webdriver.base.url>
+        <webdriver.driver>firefox</webdriver.driver>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <liquibase.version>3.0.5</liquibase.version>
+        <hsqldb.version>2.3.1</hsqldb.version>
+        <liquibase.version>3.1.1</liquibase.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
