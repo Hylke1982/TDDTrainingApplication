@@ -7,6 +7,7 @@ job {
         maven('-f TDDTrainingApplicationCC/pom.xml compile')
     }
     publishers {
+        archiveArtifacts 'puppet/**'
         downstream('Second build job (unit test)')
         downstream('Database script creation')
         downstream('Puppet code quality')
