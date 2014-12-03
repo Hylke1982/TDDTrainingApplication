@@ -1,6 +1,6 @@
 job {
     name 'Puppet code quality'
-    customWorkspace '${JENKINS_HOME}/workspace/puppet-code-quality'
+    customWorkspace '${HOME}/workspace/puppet-code-quality'
     label 'docker'
     steps {
         copyArtifacts('First build job (compilation)', 'puppet/**'){
