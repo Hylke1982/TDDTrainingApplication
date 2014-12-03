@@ -1,7 +1,7 @@
 job {
     name 'Database script creation'
     scm {
-        git('https://github.com/Hylke1982/TDDTrainingApplication', 'devops-experience-workshop')
+        cloneWorkspace('First build job (compilation)')
     }
     steps {
         maven('liquibase:updateSQL -pl database')
