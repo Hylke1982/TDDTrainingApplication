@@ -6,4 +6,7 @@ job {
     steps {
         maven('liquibase:updateSQL -pl database')
     }
+    publishers{
+        archiveArtifacts '**/*/migrate.sql', null, true
+    }
 }
