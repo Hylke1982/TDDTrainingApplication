@@ -6,6 +6,6 @@ job {
         copyArtifacts('First build job (compilation)', 'puppet/**'){
             upstreamBuild()
         }
-        shell('docker run --rm -v /home/jenkins-slave/workspace/puppet-code-quality/puppet:/puppet -t puppet-test')
+        shell('docker run --rm -v ${WORKSPACE}/puppet:/puppet -t puppet-test')
     }
 }
