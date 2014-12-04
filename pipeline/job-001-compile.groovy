@@ -9,8 +9,10 @@ job {
     publishers {
         publishCloneWorkspace('*/**')
         archiveArtifacts 'puppet/**', null, true
+        archiveArtifacts 'javascript/**', null, true
         downstream('Second build job (unit test)')
         downstream('Database script creation')
         downstream('Puppet code quality')
+        downstream('JavaScript unit test')
     }
 }
