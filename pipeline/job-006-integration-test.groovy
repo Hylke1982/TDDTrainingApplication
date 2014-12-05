@@ -1,6 +1,6 @@
 job {
     name 'Integration tests'
-    blockOn('Second build job (unit test), JavaScript unit test')
+    blockOn('Second build job (unit test)\nJavaScript unit test')
     blockOnUpstreamProjects()
     scm {
         cloneWorkspace('First build job (compilation)')
