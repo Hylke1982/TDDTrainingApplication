@@ -10,6 +10,5 @@ job {
     }
     publishers {
         archiveJunit('**/javascript/reports/**/*.xml')
-        downstream('Integration tests')
     }
 }
