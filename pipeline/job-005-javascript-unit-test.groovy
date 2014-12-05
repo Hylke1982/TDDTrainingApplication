@@ -8,4 +8,7 @@ job {
         }
         shell('docker run --rm -v ${WORKSPACE}/javascript:/javascript -t jasmine-nodejs-test jasmine-node --verbose --junitreport --noColor spec')
     }
+    publishers {
+        archiveJunit('**/javascript/reports/**/*.xml')
+    }
 }

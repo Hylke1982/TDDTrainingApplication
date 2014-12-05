@@ -6,4 +6,7 @@ job {
     steps {
         maven('-f TDDTrainingApplicationCC/pom.xml test')
     }
+    publishers {
+        archiveJunit('**/target/surefire-reports/*.xml')
+    }
 }
