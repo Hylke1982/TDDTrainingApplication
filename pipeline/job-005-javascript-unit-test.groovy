@@ -6,6 +6,6 @@ job {
         copyArtifacts('First build job (compilation)', 'javascript/**'){
             upstreamBuild()
         }
-        shell('docker run --rm -v ${WORKSPACE}/javascript:/javascript -t javascript-nodejs-test jasmine-node --verbose --junitreport --noColor spec')
+        shell('docker run --rm -v ${WORKSPACE}/javascript:/javascript -t jasmine-nodejs-test jasmine-node --verbose --junitreport --noColor spec')
     }
 }
