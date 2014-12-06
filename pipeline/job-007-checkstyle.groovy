@@ -6,4 +6,9 @@ job {
     steps {
         maven('-pl TDDTrainingApplicationCC checkstyle:checkstyle')
     }
+    publishers {
+        checkstyle('**/checkstyle-result.xml') {
+            shouldDetectModules true
+        }
+    }
 }
