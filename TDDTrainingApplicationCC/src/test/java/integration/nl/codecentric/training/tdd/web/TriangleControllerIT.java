@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.*;
  * Date: 24-12-12
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:applicationContext-defects.xml", "classpath:applicationContext-webmvc.xml"})
+@ContextConfiguration(locations = {"classpath:applicationContext-development.xml", "classpath:applicationContext-webmvc.xml"})
 public class TriangleControllerIT {
 
     @Autowired
