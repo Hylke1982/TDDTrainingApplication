@@ -9,6 +9,7 @@ job {
         maven('-f TDDTrainingApplicationCC/pom.xml test -Pintegration')
     }
     publishers {
+        downstream('Checkstyle validation')
         archiveJunit('**/target/surefire-reports/*.xml')
     }
 }
