@@ -7,6 +7,7 @@ job {
         maven('-pl TDDTrainingApplicationCC clean package')
     }
     publishers {
+        downstream('Tomcat deployment')
         archiveArtifacts '**/TDDTrainingApplicationCC.war', null, true
     }
 }

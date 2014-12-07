@@ -8,7 +8,4 @@ job {
         }
         shell('docker run --rm -v ${WORKSPACE}/TDDTrainingApplicationCC/target:/webapps -t tomcat-container sleep 60s && exit')
     }
-    publishers {
-        archiveJunit('**/javascript/reports/**/*.xml')
-    }
 }
