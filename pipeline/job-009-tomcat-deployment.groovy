@@ -1,5 +1,5 @@
 job {
-    name 'Artifact creation'
+    name 'Tomcat deployment'
     customWorkspace '${HOME}/workspace/tomcat-deployment'
     label 'docker'
     steps {
