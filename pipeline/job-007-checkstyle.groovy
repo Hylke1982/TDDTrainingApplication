@@ -7,7 +7,7 @@ job {
         maven('-pl TDDTrainingApplicationCC checkstyle:checkstyle')
     }
     publishers {
-//        downstream('Artifact creation')
+        downstream('Artifact creation')
         checkstyle('**/checkstyle-result.xml') {
             shouldDetectModules true
         }
