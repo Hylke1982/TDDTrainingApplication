@@ -13,6 +13,6 @@ job {
         downstream('Second build job (unit test)')
         downstream('Database script creation')
         downstream('Puppet code quality')
-//        downstream('JavaScript unit test')
+        downstream('JavaScript unit test')
     }
 }
