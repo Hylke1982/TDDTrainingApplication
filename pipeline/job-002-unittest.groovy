@@ -8,6 +8,6 @@ job {
     }
     publishers {
         archiveJunit('**/target/surefire-reports/*.xml')
-        downstream('Integration tests')
+        //downstream('Integration tests')
     }
 }
