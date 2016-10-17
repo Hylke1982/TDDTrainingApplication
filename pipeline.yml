@@ -1,0 +1,6 @@
+resources:
+- name: source-code
+  type: git
+  source:
+    uri: git@github.com:Hylke1982/TDDTrainingApplication.git
+    branch: concourse
