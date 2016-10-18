@@ -11,6 +11,7 @@ jobs:
 - name: build
   plan:
   - get: source-code
+    triggger: true
   - task: compile
     config:
       platform: linux

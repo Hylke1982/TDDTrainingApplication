@@ -6,7 +6,7 @@ image_resource:
 
 inputs:
   - name: source-code
-  
+
 run:
   path: mvn
   args: ["-f", "source-code/pom.xml","test"]
