@@ -26,6 +26,9 @@ jobs:
 
 - name: test
   plan:
+  - get: source-code
+    trigger: true
+    passed: [build]
   - task: unit-test
     config:
       privileged: true
