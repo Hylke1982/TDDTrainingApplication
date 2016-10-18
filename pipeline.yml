@@ -7,6 +7,7 @@ resources:
 
 
 jobs:
+
 - name: build
   plan:
   - get: source-code
@@ -25,5 +26,6 @@ jobs:
 - name: test
   plan:
   - task: unit-test
-        privileged: true
-        file: source-code/concourse/maven-test.yml
+    config:
+      privileged: true
+      file: source-code/concourse/maven-test.yml
