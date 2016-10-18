@@ -2,5 +2,28 @@ resources:
 - name: source-code
   type: git
   source:
-    uri: git@github.com:Hylke1982/TDDTrainingApplication.git
+    uri: https://github.com/Hylke1982/TDDTrainingApplication.git
     branch: concourse
+
+
+jobs:
+- name: build
+  plan:
+  - get: source-code
+  - task: compile
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: maven}
+      inputs:
+        - name: source-code
+      run:
+        path: mvn
+        args: ["-f", "source-code/pom.xml","compile"]
+
+- name: test
+  plan:
+  - task: unit-test
+        privileged: true
+        file: source-code/concourse/maven-test.yml
