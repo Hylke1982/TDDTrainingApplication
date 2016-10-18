@@ -31,5 +31,6 @@ jobs:
     passed: [build]
   - task: unit-test
     config:
-      privileged: true
+      inputs:
+        - name: source-code
       file: source-code/concourse/maven-test.yml
