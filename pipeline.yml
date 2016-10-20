@@ -27,10 +27,8 @@ jobs:
 - name: test
   plan:
   - get: source-code
-    trigger: true
     passed: [build]
   - task: unit-test
-    config:
-      inputs:
-        - name: source-code
-      file: source-code/concourse/maven-test.yml
+    file: source-code/concourse/maven-test.yml
+  - task: database-creation
+    file: source-code/concourse/database-creation.yml
