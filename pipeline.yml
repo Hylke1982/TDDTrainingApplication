@@ -28,6 +28,7 @@ jobs:
   plan:
   - get: source-code
     passed: [build]
+    trigger: true
   - task: unit-test
     file: source-code/concourse/maven-test.yml
   - task: database-creation
